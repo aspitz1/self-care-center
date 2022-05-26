@@ -6,3 +6,26 @@ dark-blue - #134d71;
 white - #ffffff;
 black - #000000;
 */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.affirmation-btn,
+.mantra-btn {
+
+}
+
+.hidden {
+  visibility: hidden;
+}
