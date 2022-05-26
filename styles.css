@@ -12,20 +12,49 @@ black - #000000;
 }
 
 body {
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  font-family: 'Quicksand', sans-serif;
+  color: #fff;
+  background: linear-gradient(#134d71, #78a7c6, #f7e4bf)
+}
+.self-care-center-heading {
+  margin: 6vh 0 8vh 0;
+  font-size: 3rem;
+}
+.form-heading {
+  margin-bottom: 1vh;
+  font-size: 2rem;
 }
 .form-wrapper {
+  margin-bottom: 6vh;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  border-radius: 1rem;
+  width: 60vw;
+  color: #000;
+  background: #fff;
 }
 .affirmation-btn,
 .mantra-btn {
-
+  margin: 2vh 0 2vh 0;
+  font-size: 1rem;
 }
-
+.submit,
+.reset {
+  padding: .5vh 1.5vw .5vh 1.5vw;
+  border-radius: .3rem;
+  font-size: 1rem;
+  font-family: 'Quicksand', sans-serif;
+  color: #fff;
+  background: #134d71;
+}
+.meditate-image {
+  width: 15vw;
+}
 .hidden {
   visibility: hidden;
 }
