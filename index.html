@@ -6,23 +6,23 @@
   </head>
   <body>
     <h1 class="self-care-center-heading">&#10024; Self Care Center &#10024;</h1>
-    <h2 class="form-heading form-text">Which type of message?</h2>
+    <h2 class="form-heading">Which type of message?</h2>
     <form id="form" class="form-wrapper">
       <div class="input-wrapper">
        <input id="affirmation-radio" class="affirmation-btn" type="radio" name="form-btn" value="affirmation" required>
-       <label class="affirmation-lable form-text" for="affirmation">affirmation</label>
+       <label class="affirmation-lable" for="affirmation">affirmation</label>
        <input id="mantra-radio" class="mantra-btn" type="radio" name="form-btn" value="mantra" required placeholder="Please choose one for inner peace.">
-       <label class="manta-lable form-text" for="mantra">mantra</label>
+       <label class="manta-lable" for="mantra">mantra</label>
      </div>
      <div id="button-wrapper">
        <button id="submit-btn" class="submit" type="submit">Receive Message</button>
      </div>
    </form>
-   <div class="msg-wrapper">
-     <div id="display-inner-txt" class="display-msg">
+     <div id="display-inner-txt-wrapper" class="display-wrapper">
        <p id="affirmation-mantra-txt" class="affirmation-mantra-msg"><img id="meditate-img" class="meditate-image" src="assets/meditate.svg"></p>
+       <form id="form-custom-msg" class"custom-msg hidden">
+       </form>
      </div>
-   </div>
     <script type="text/javascript" src="main.js"></script>
   </body>
 </html>

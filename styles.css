@@ -68,7 +68,7 @@ body {
 .reset:active {
   background: #103348;
 }
-.display-msg {
+.display-wrapper {
   box-sizing: content-box;
   width: 40rem;
   min-height: 9rem;
