@@ -25,26 +25,33 @@ body {
   font-size: 3rem;
 }
 .form-heading {
-  margin-bottom: 1vh;
+  margin-bottom: 2vh;
   font-size: 2rem;
 }
 .form-wrapper {
-  margin-bottom: 6vh;
+  margin-bottom: 8vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   border-radius: 1rem;
-  width: 60vw;
+  width: 500px;
   color: #000;
   background: #fff;
 }
 .affirmation-btn,
 .mantra-btn {
-  margin: 2vh 0 2vh 0;
-  font-size: 1rem;
+  margin: 2.5vh .3vw 2.5vh 0;
+}
+.affirmation-lable,
+.manta-lable {
+  font-size: 1.3rem;
+}
+.affirmation-lable {
+  margin-right: 5vw;
 }
 .submit,
 .reset {
+  margin-bottom: 2vh;
   padding: .5vh 1.5vw .5vh 1.5vw;
   border-radius: .3rem;
   font-size: 1rem;
@@ -52,8 +59,28 @@ body {
   color: #fff;
   background: #134d71;
 }
+.submit:hover,
+.reset:hover {
+  cursor: pointer;
+  background: #1c6ea1;
+}
+.submit:active,
+.reset:active {
+  background: #103348;
+}
+.display-msg {
+  padding: 1rem;
+  box-sizing: content-box;
+  width: 600px;
+  min-height: 8vh;
+  border-radius: 1rem;
+  text-align: center;
+  font-size: 1.8rem;
+  color: #000;
+  background: #fff;
+}
 .meditate-image {
-  width: 15vw;
+  max-width: 100px;
 }
 .hidden {
   visibility: hidden;
