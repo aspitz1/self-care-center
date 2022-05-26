@@ -37,7 +37,7 @@ const mantraRadio = document.querySelector('#mantra-radio')
 const submitBtn = document.querySelector('#submit-btn')
 const buttonWrapper = document.querySelector('#button-wrapper')
 const meditateImg = document.querySelector('#meditate-img')
-const displayMsg = document.querySelector('#display-inner-txt')
+const displayMsg = document.querySelector('#affirmation-mantra-txt')
 
 form.addEventListener('submit', generateMantra)
 document.addEventListener('click', makeEventListenerReset)
