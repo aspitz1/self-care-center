@@ -35,12 +35,12 @@ const form = document.querySelector('#form')
 const affirmationRadio = document.querySelector('#affirmation-radio')
 const mantraRadio = document.querySelector('#mantra-radio')
 const submitBtn = document.querySelector('#submit-btn')
-const resetBtn = document.querySelector('#reset-btn')
+const buttonWrapper = document.querySelector('#button-wrapper')
 const meditateImg = document.querySelector('#meditate-img')
 const displayMsg = document.querySelector('#display-inner-txt')
 
 form.addEventListener('submit', generateMantra)
-resetBtn.addEventListener('click', reset)
+document.addEventListener('click', makeEventListenerReset)
 
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
@@ -49,28 +49,34 @@ function getRandomIndex(array) {
 function generateMantra(e) {
   e.preventDefault()
   if (affirmationRadio.checked) {
-    resetBtn.classList.remove('hidden')
+    buttonWrapper.innerHTML = '<button id="reset-btn" class="reset" type="reset">Need Another?</button>'
     meditateImg.classList.add('hidden')
-    submitBtn.classList.add('hidden')
     affirmationRadio.disabled = true
     mantraRadio.disabled = true
     const num = getRandomIndex(affirmations)
     displayMsg.innerText = affirmations[num]
   }
   if (mantraRadio.checked) {
-    resetBtn.classList.remove('hidden')
+    buttonWrapper.innerHTML = '<button id="reset-btn" class="reset" type="reset">Need Another?</button>'
     meditateImg.classList.add('hidden')
-    submitBtn.classList.add('hidden')
     affirmationRadio.disabled = true
     mantraRadio.disabled = true
     const num = getRandomIndex(mantras)
     displayMsg.innerText = mantras[num]
   }
 }
+
+function makeEventListenerReset(e) {
+  const element = e.target
+  if(element.classList.contains('reset')) {
+    reset()
+  }
+}
+
 function reset(){
-  submitBtn.classList.remove('hidden')
-  resetBtn.classList.add('hidden')
+  buttonWrapper.innerHTML = '<button id="submit-btn" class="submit" type="submit">Receive Message</button>'
+  meditateImg.classList.remove('hidden')
   affirmationRadio.disabled = false
   mantraRadio.disabled = false
-  displayMsg.innerText = ''
+  displayMsg.innerHTML = '<img id="meditate-img" class="meditate-image" src="assets/meditate.svg" width="100px">'
 }
