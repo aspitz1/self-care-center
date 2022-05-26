@@ -15,7 +15,7 @@ const affirmations = [
 ]
 const mantras = [
   'Breathing in, I send myself love. Breathing out, I send love to someone else who needs it.',
-  'Don’t let yesterday take up too much of today.',
+  'Don\'t let yesterday take up too much of today.',
   'Every day is a second chance.',
   'Tell the truth and love everyone.',
   'I am free from sadness.',
@@ -48,17 +48,15 @@ function getRandomIndex(array) {
 
 function generateMantra(e) {
   e.preventDefault()
+  buttonWrapper.innerHTML = '<button id="reset-btn" class="reset" type="reset">Need Another?</button>'
+  meditateImg.classList.add('hidden')
   if (affirmationRadio.checked) {
-    buttonWrapper.innerHTML = '<button id="reset-btn" class="reset" type="reset">Need Another?</button>'
-    meditateImg.classList.add('hidden')
     affirmationRadio.disabled = true
     mantraRadio.disabled = true
     const num = getRandomIndex(affirmations)
     displayMsg.innerText = affirmations[num]
   }
   if (mantraRadio.checked) {
-    buttonWrapper.innerHTML = '<button id="reset-btn" class="reset" type="reset">Need Another?</button>'
-    meditateImg.classList.add('hidden')
     affirmationRadio.disabled = true
     mantraRadio.disabled = true
     const num = getRandomIndex(mantras)
