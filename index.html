@@ -17,26 +17,28 @@
      <div id="button-wrapper">
        <button id="submit-btn" class="submit" type="submit">Receive Message</button>
        <button id="custom-form-btn" class="custom-form-button" type="button">Enter Your Own</button>
+       <button id="reset-btn" class="reset hidden" type="reset">Need Another?</button>
      </div>
    </form>
      <div id="display-inner-txt-wrapper" class="display-wrapper">
-       <p id="affirmation-mantra-txt" class="affirmation-mantra-msg"><img id="meditate-img" class="meditate-image" src="assets/meditate.svg" alt="Graphic style image of someone sitting and meditating."></p>
+       <img id="meditate-img" class="meditate-image" src="assets/meditate.svg" alt="Graphic style image of someone sitting and meditating.">
+       <p id="affirmation-mantra-txt" class="affirmation-mantra-msg hidden"></p>
+       <form id="custom-input" class="custom-form hidden">
+         <label id="label-for-custom-msg" class="custom-msg-lable" for="custom-msg">Enter your custom affirmation or mantra:</label>
+         <div class="custom-input-txt-wrapper">
+           <input type="text" name="custom-msg">
+         </div>
+         <div class="radio-custom-wrapper">
+           <input id="affirmation-radio-custom" class="affirmation-btn" type="radio" name="form-btn" value="affirmation" required>
+           <label class="affirmation-lable" for="affirmation">affirmation</label>
+           <input id="mantra-radio-custom" class="mantra-btn" type="radio" name="form-btn" value="mantra" required placeholder="Please choose one for inner peace.">
+           <label class="manta-lable" for="mantra">mantra</label>
+        </div>
+        <div id="custom-btn-wrapper" class="custom-submit-wrapper">
+           <button id="custom-btn" class="custom-submit" type="submit">Add Message</button>
+        </div>
+        </form>
      </div>
-    <form id="custom-input" class="custom-form">
-      <label id="label-for-custom-msg" class="custom-msg-lable" for="custom-msg">Enter your custom affirmation or mantra:</label>
-      <div class="custom-input-txt-wrapper">
-        <input type="text" name="custom-msg">
-      </div>
-      <div class="radio-custom-wrapper">
-        <input id="affirmation-radio-custom" class="affirmation-btn" type="radio" name="form-btn" value="affirmation" required>
-        <label class="affirmation-lable" for="affirmation">affirmation</label>
-        <input id="mantra-radio-custom" class="mantra-btn" type="radio" name="form-btn" value="mantra" required placeholder="Please choose one for inner peace.">
-        <label class="manta-lable" for="mantra">mantra</label>
-     </div>
-     <div id="custom-btn-wrapper" class="custom-submit-wrapper">
-        <button id="custom-btn" class="custom-submit" type="submit">Add Message</button>
-     </div>
-     </form>
     <script type="text/javascript" src="main.js"></script>
   </body>
 </html>

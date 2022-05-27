@@ -75,11 +75,13 @@ body {
   background: #103348;
 }
 .display-wrapper {
-  box-sizing: content-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   width: 40rem;
   min-height: 9rem;
   border-radius: 1rem;
-  text-align: center;
   background: #fff;
   color: #000
 }
@@ -93,4 +95,6 @@ body {
 }
 .hidden {
   visibility: hidden;
+  width: 0;
+  height: 0;
 }

@@ -36,12 +36,15 @@ const affirmationRadio = document.querySelector('#affirmation-radio')
 const mantraRadio = document.querySelector('#mantra-radio')
 const submitBtn = document.querySelector('#submit-btn')
 const customFormBtn = document.querySelector('#custom-form-btn')
+const resetBtn = document.querySelector('#reset-btn')
 const buttonWrapper = document.querySelector('#button-wrapper')
 const meditateImg = document.querySelector('#meditate-img')
 const displayMsg = document.querySelector('#affirmation-mantra-txt')
+const formCustom = document.querySelector('#custom-input')
 
 form.addEventListener('submit', generateMantra)
-document.addEventListener('click', getElementReset)
+resetBtn.addEventListener('click', reset)
+customFormBtn.addEventListener('click', showFormHideImgText)
 
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
@@ -49,7 +52,14 @@ function getRandomIndex(array) {
 
 function generateMantra(e) {
   e.preventDefault()
-  showResetBtn()
+  if (!formCustom.classList.contains('hidden') && resetBtn.classList.contains('hidden')) {
+    hideFormShowText()
+    reset()
+    enableRadioform()
+    return
+  }
+  showTextHideImg()
+  showResetBtnHideSubmitOwn()
   if (affirmationRadio.checked) {
     const num = getRandomIndex(affirmations)
     displayMsg.innerText = affirmations[num]
@@ -60,22 +70,65 @@ function generateMantra(e) {
   }
 }
 
-function getElementReset(e) {
-  const element = e.target
-  if(element.classList.contains('reset')) {
-    reset()
-  }
+function reset(){
+  hideTextShowImg()
+  showSubmitOwnHideReset()
 }
 
-function showResetBtn() {
-  buttonWrapper.innerHTML = '<button id="reset-btn" class="reset" type="reset">Need Another?</button>'
+function enableRadioform() {
+  affirmationRadio.disabled = false
+  mantraRadio.disabled = false
+}
+
+function disableRadioform() {
   affirmationRadio.disabled = true
   mantraRadio.disabled = true
 }
 
-function reset(){
-  buttonWrapper.innerHTML = '<button id="submit-btn" class="submit" type="submit">Receive Message</button><button id="custom-form-btn" class="custom-form-button" type="button">Enter Your Own</button>'
-  affirmationRadio.disabled = false
-  mantraRadio.disabled = false
-  displayMsg.innerHTML = '<img id="meditate-img" class="meditate-image" src="assets/meditate.svg" width="100px">'
+function showTextHideImg() {
+  meditateImg.classList.add('hidden')
+  displayMsg.classList.remove('hidden')
+}
+
+function hideTextShowImg() {
+  meditateImg.classList.remove('hidden')
+  displayMsg.classList.add('hidden')
+}
+
+function hideTxtHideImg() {
+  meditateImg.classList.add('hidden')
+  displayMsg.classList.add('hidden')
+}
+
+function showTxtShowImg() {
+  meditateImg.classList.remove('hidden')
+  displayMsg.classList.remove('hidden')
+}
+
+function hideSubmitOwnShowReset() {
+  submitBtn.classList.add('hidden')
+  customFormBtn.classList.add('hidden')
+  resetBtn.classList.remove('hidden')
+}
+
+function showResetBtnHideSubmitOwn() {
+  submitBtn.classList.add('hidden')
+  customFormBtn.classList.add('hidden')
+  resetBtn.classList.remove('hidden')
+}
+
+function showSubmitOwnHideReset() {
+  submitBtn.classList.remove('hidden')
+  customFormBtn.classList.remove('hidden')
+  resetBtn.classList.add('hidden')
+}
+function showFormHideImgText() {
+  disableRadioform()
+  formCustom.classList.remove('hidden')
+  hideTxtHideImg()
+}
+
+function hideFormShowText() {
+  formCustom.classList.add('hidden')
+  showTextHideImg()
 }
