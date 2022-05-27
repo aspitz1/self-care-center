@@ -35,12 +35,13 @@ const form = document.querySelector('#form')
 const affirmationRadio = document.querySelector('#affirmation-radio')
 const mantraRadio = document.querySelector('#mantra-radio')
 const submitBtn = document.querySelector('#submit-btn')
+const customFormBtn = document.querySelector('#custom-form-btn')
 const buttonWrapper = document.querySelector('#button-wrapper')
 const meditateImg = document.querySelector('#meditate-img')
 const displayMsg = document.querySelector('#affirmation-mantra-txt')
 
 form.addEventListener('submit', generateMantra)
-document.addEventListener('click', makeEventListenerReset)
+document.addEventListener('click', getElementReset)
 
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
@@ -48,10 +49,7 @@ function getRandomIndex(array) {
 
 function generateMantra(e) {
   e.preventDefault()
-  buttonWrapper.innerHTML = '<button id="reset-btn" class="reset" type="reset">Need Another?</button>'
-  displayMsg.innerHTML = ''
-  affirmationRadio.disabled = true
-  mantraRadio.disabled = true
+  showResetBtn()
   if (affirmationRadio.checked) {
     const num = getRandomIndex(affirmations)
     displayMsg.innerText = affirmations[num]
@@ -62,15 +60,21 @@ function generateMantra(e) {
   }
 }
 
-function makeEventListenerReset(e) {
+function getElementReset(e) {
   const element = e.target
   if(element.classList.contains('reset')) {
     reset()
   }
 }
 
+function showResetBtn() {
+  buttonWrapper.innerHTML = '<button id="reset-btn" class="reset" type="reset">Need Another?</button>'
+  affirmationRadio.disabled = true
+  mantraRadio.disabled = true
+}
+
 function reset(){
-  buttonWrapper.innerHTML = '<button id="submit-btn" class="submit" type="submit">Receive Message</button>'
+  buttonWrapper.innerHTML = '<button id="submit-btn" class="submit" type="submit">Receive Message</button><button id="custom-form-btn" class="custom-form-button" type="button">Enter Your Own</button>'
   affirmationRadio.disabled = false
   mantraRadio.disabled = false
   displayMsg.innerHTML = '<img id="meditate-img" class="meditate-image" src="assets/meditate.svg" width="100px">'

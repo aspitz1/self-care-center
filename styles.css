@@ -50,7 +50,9 @@ body {
   margin-right: 5vw;
 }
 .submit,
-.reset {
+.reset,
+.custom-form-button,
+.custom-submit {
   margin-bottom: 2vh;
   padding: .5vh 1.5vw .5vh 1.5vw;
   border-radius: .3rem;
@@ -60,12 +62,16 @@ body {
   background: #134d71;
 }
 .submit:hover,
-.reset:hover {
+.reset:hover,
+.custom-form-button:hover,
+.custom-submit:hover {
   cursor: pointer;
   background: #1c6ea1;
 }
 .submit:active,
-.reset:active {
+.reset:active,
+.custom-form-button:active,
+.custom-submit:active {
   background: #103348;
 }
 .display-wrapper {
@@ -75,11 +81,12 @@ body {
   border-radius: 1rem;
   text-align: center;
   background: #fff;
+  color: #000
 }
-.affirmation-mantra-msg {
+.affirmation-mantra-msg,
+.custom-msg-lable {
   padding: 3.1rem 1rem;
   font-size: 1.8rem;
-  color: #000;
 }
 .meditate-image {
   max-width: 100px;
