@@ -49,16 +49,14 @@ function getRandomIndex(array) {
 function generateMantra(e) {
   e.preventDefault()
   buttonWrapper.innerHTML = '<button id="reset-btn" class="reset" type="reset">Need Another?</button>'
-  meditateImg.classList.add('hidden')
+  displayMsg.innerHTML = ''
+  affirmationRadio.disabled = true
+  mantraRadio.disabled = true
   if (affirmationRadio.checked) {
-    affirmationRadio.disabled = true
-    mantraRadio.disabled = true
     const num = getRandomIndex(affirmations)
     displayMsg.innerText = affirmations[num]
   }
   if (mantraRadio.checked) {
-    affirmationRadio.disabled = true
-    mantraRadio.disabled = true
     const num = getRandomIndex(mantras)
     displayMsg.innerText = mantras[num]
   }
@@ -73,7 +71,6 @@ function makeEventListenerReset(e) {
 
 function reset(){
   buttonWrapper.innerHTML = '<button id="submit-btn" class="submit" type="submit">Receive Message</button>'
-  meditateImg.classList.remove('hidden')
   affirmationRadio.disabled = false
   mantraRadio.disabled = false
   displayMsg.innerHTML = '<img id="meditate-img" class="meditate-image" src="assets/meditate.svg" width="100px">'
