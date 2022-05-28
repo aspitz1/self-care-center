@@ -55,6 +55,8 @@ customFormBtn.addEventListener('click', showFormHideImgText)
 formCustom.addEventListener('submit', submitCustom)
 affirmationRadio.addEventListener('change', affirmationBackground)
 mantraRadio.addEventListener('change', mantraBackground)
+customRadioAffirmation.addEventListener('change', affirmationBackground)
+customRadioMantra.addEventListener('change', mantraBackground)
 
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
