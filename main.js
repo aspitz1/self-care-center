@@ -102,6 +102,12 @@ function reset(){
   displayMsg.classList.remove('fade-in')
 }
 
+function showFormHideImgText() {
+  disableRadio(affirmationRadio, mantraRadio)
+  formCustom.classList.remove('hidden')
+  hideTxtHideImg()
+}
+
 function enableRadio(radio1, radio2) {
   radio1.disabled = false
   radio2.disabled = false
@@ -122,16 +128,6 @@ function hideTextShowImg() {
   displayMsg.classList.add('hidden')
 }
 
-function hideTxtHideImg() {
-  meditateImg.classList.add('hidden')
-  displayMsg.classList.add('hidden')
-}
-
-function showTxtShowImg() {
-  meditateImg.classList.remove('hidden')
-  displayMsg.classList.remove('hidden')
-}
-
 function showResetBtnHideSubmitOwn() {
   submitBtn.classList.add('hidden')
   customFormBtn.classList.add('hidden')
@@ -142,11 +138,6 @@ function showSubmitOwnHideReset() {
   submitBtn.classList.remove('hidden')
   customFormBtn.classList.remove('hidden')
   resetBtn.classList.add('hidden')
-}
-function showFormHideImgText() {
-  disableRadio(affirmationRadio, mantraRadio)
-  formCustom.classList.remove('hidden')
-  hideTxtHideImg()
 }
 
 function hideFormShowText() {
