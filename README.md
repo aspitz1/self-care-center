@@ -23,7 +23,6 @@ This project could be added on to with options to favorite and save phrases, as 
 2. Clone the repo to your local machine.
 3. In your terminal, navigate to your project repo.
 4. Run the command open index.html.
-<br>
 Alternatively visit the GitHub page link provided below!
 # Contributors
 [Anna Spitz](https://github.com/aspitz1)
