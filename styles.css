@@ -134,6 +134,12 @@ main {
   animation: breathing-img 3s ease-out;
 }
 @keyframes breathing-img {
+  0% {
+    width: auto;
+    height: auto;
+    max-height: 100%;
+    max-width: 100%;
+  }
   25% {
     width: auto;
     height: auto;

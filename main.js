@@ -74,6 +74,7 @@ function mantraBackground() {
 
 function generateMantra(e) {
   e.preventDefault()
+  disableRadio(affirmationRadio, mantraRadio)
   if (!formCustom.classList.contains('hidden') && resetBtn.classList.contains('hidden')) {
     hideFormShowText()
     reset()
