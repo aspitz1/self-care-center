@@ -62,11 +62,12 @@ function generateMantra(e) {
   if (!formCustom.classList.contains('hidden') && resetBtn.classList.contains('hidden')) {
     hideFormShowText()
     reset()
-    enableRadioform()
+    enableRadio(affirmationRadio, mantraRadio)
     return
   }
   showTextHideImg()
   showResetBtnHideSubmitOwn()
+  displayMsg.classList.add('fade-in')
   if (affirmationRadio.checked) {
     const num = getRandomIndex(affirmations)
     displayMsg.innerText = affirmations[num]
@@ -81,6 +82,7 @@ function submitCustom(e) {
   e.preventDefault()
   hideFormShowText()
   showResetBtnHideSubmitOwn()
+  displayMsg.classList.add('fade-in')
   if (customRadioAffirmation.checked) {
     customAffirmation.push(inputTxt.value)
     affirmations.push(inputTxt.value)
@@ -95,18 +97,19 @@ function submitCustom(e) {
 
 function reset(){
   hideTextShowImg()
-  enableRadioform()
+  enableRadio(affirmationRadio, mantraRadio)
   showSubmitOwnHideReset()
+  displayMsg.classList.remove('fade-in')
 }
 
-function enableRadioform() {
-  affirmationRadio.disabled = false
-  mantraRadio.disabled = false
+function enableRadio(radio1, radio2) {
+  radio1.disabled = false
+  radio2.disabled = false
 }
 
-function disableRadioform() {
-  affirmationRadio.disabled = true
-  mantraRadio.disabled = true
+function disableRadio(radio1, radio2) {
+  radio1.disabled = true
+  radio2.disabled = true
 }
 
 function showTextHideImg() {
@@ -129,12 +132,6 @@ function showTxtShowImg() {
   displayMsg.classList.remove('hidden')
 }
 
-function hideSubmitOwnShowReset() {
-  submitBtn.classList.add('hidden')
-  customFormBtn.classList.add('hidden')
-  resetBtn.classList.remove('hidden')
-}
-
 function showResetBtnHideSubmitOwn() {
   submitBtn.classList.add('hidden')
   customFormBtn.classList.add('hidden')
@@ -147,7 +144,7 @@ function showSubmitOwnHideReset() {
   resetBtn.classList.add('hidden')
 }
 function showFormHideImgText() {
-  disableRadioform()
+  disableRadio(affirmationRadio, mantraRadio)
   formCustom.classList.remove('hidden')
   hideTxtHideImg()
 }

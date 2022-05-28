@@ -63,6 +63,7 @@ body {
   font-family: 'Quicksand', sans-serif;
   color: #fff;
   background: #134d71;
+  transition: background 1s;
 }
 .submit:hover,
 .reset:hover,
@@ -76,6 +77,7 @@ body {
 .custom-form-button:active,
 .custom-submit:active {
   background: #103348;
+  transition: none;
 }
 .display-wrapper {
   display: flex;
@@ -92,6 +94,17 @@ body {
 .affirmation-mantra-msg {
   padding: 3.1rem 1rem;
   font-size: 1.8rem;
+}
+.fade-in {
+  animation: fadein 2s ease-in forwards;
+}
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 .custom-form-lable {
   margin-bottom: 2vh;
