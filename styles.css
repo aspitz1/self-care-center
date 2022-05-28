@@ -30,30 +30,33 @@ body {
 }
 .form-wrapper {
   margin-bottom: 8vh;
+  padding: .3rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   border-radius: 1rem;
-  width: 35rem;
+  width: 45vw;
+  max-height: 200px;
   color: #000;
   background: #fff;
 }
 .affirmation-btn,
 .mantra-btn {
-  margin: 2.5vh .3vw 2.5vh 0;
+  margin: 3vh .3vw 2vh 0;
+}
+.custom-radio {
+  margin-bottom: 2vh;
 }
 .affirmation-lable,
-.manta-lable {
+.manta-lable,
+.custom-affirmation-lable,
+.custom-mantra-lable {
   font-size: 1.3rem;
-}
-.affirmation-lable {
-  margin-right: 5vw;
 }
 .submit,
 .reset,
 .custom-form-button,
 .custom-submit {
-  margin-bottom: 2vh;
   padding: .5vh 1.5vw .5vh 1.5vw;
   border-radius: .3rem;
   font-size: 1rem;
@@ -76,22 +79,33 @@ body {
 }
 .display-wrapper {
   display: flex;
+  padding: 10px;
   justify-content: center;
   align-items: center;
   text-align: center;
-  width: 40rem;
-  min-height: 9rem;
+  width: 55vw;
+  height: 12vh;
   border-radius: 1rem;
   background: #fff;
   color: #000
 }
-.affirmation-mantra-msg,
-.custom-msg-lable {
+.affirmation-mantra-msg {
   padding: 3.1rem 1rem;
   font-size: 1.8rem;
 }
+.custom-form-lable {
+  margin-bottom: 2vh;
+  font-size: 1.2rem;
+}
+.custom-text {
+  width: 27vw;
+  font-size: 1rem;
+}
 .meditate-image {
-  max-width: 100px;
+  width: auto;
+  height: auto;
+  max-height: 100%;
+  max-width: 100%;
 }
 .hidden {
   visibility: hidden;

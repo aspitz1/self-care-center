@@ -31,20 +31,27 @@ const mantras = [
   'I am the sky, the rest is weather.'
 ]
 
+let customAffirmation = []
+let customMantra = []
+
 const form = document.querySelector('#form')
 const affirmationRadio = document.querySelector('#affirmation-radio')
 const mantraRadio = document.querySelector('#mantra-radio')
 const submitBtn = document.querySelector('#submit-btn')
-const customFormBtn = document.querySelector('#custom-form-btn')
 const resetBtn = document.querySelector('#reset-btn')
-const buttonWrapper = document.querySelector('#button-wrapper')
+const customFormBtn = document.querySelector('#custom-form-btn')
+const customFormSubmit = document.querySelector('#custom-btn')
+const customRadioAffirmation = document.querySelector('#affirmation-radio-custom')
+const customRadioMantra = document.querySelector('#mantra-radio-custom')
 const meditateImg = document.querySelector('#meditate-img')
 const displayMsg = document.querySelector('#affirmation-mantra-txt')
 const formCustom = document.querySelector('#custom-input')
+const inputTxt = document.querySelector('#custom-input-txt-box')
 
 form.addEventListener('submit', generateMantra)
 resetBtn.addEventListener('click', reset)
 customFormBtn.addEventListener('click', showFormHideImgText)
+formCustom.addEventListener('submit', submitCustom)
 
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
@@ -70,8 +77,25 @@ function generateMantra(e) {
   }
 }
 
+function submitCustom(e) {
+  e.preventDefault()
+  hideFormShowText()
+  showResetBtnHideSubmitOwn()
+  if (customRadioAffirmation.checked) {
+    customAffirmation.push(inputTxt.value)
+    affirmations.push(inputTxt.value)
+    displayMsg.innerText = inputTxt.value
+  }
+  if (customRadioMantra.checked) {
+    customMantra.push(inputTxt.value)
+    mantras.push(inputTxt.value)
+    displayMsg.innerText = inputTxt.value
+  }
+}
+
 function reset(){
   hideTextShowImg()
+  enableRadioform()
   showSubmitOwnHideReset()
 }
 
