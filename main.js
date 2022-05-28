@@ -34,6 +34,7 @@ const mantras = [
 let customAffirmation = []
 let customMantra = []
 
+const main = document.querySelector('main')
 const form = document.querySelector('#form')
 const affirmationRadio = document.querySelector('#affirmation-radio')
 const mantraRadio = document.querySelector('#mantra-radio')
@@ -52,9 +53,21 @@ form.addEventListener('submit', generateMantra)
 resetBtn.addEventListener('click', reset)
 customFormBtn.addEventListener('click', showFormHideImgText)
 formCustom.addEventListener('submit', submitCustom)
+affirmationRadio.addEventListener('change', affirmationBackground)
+mantraRadio.addEventListener('change', mantraBackground)
 
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
+}
+
+function affirmationBackground() {
+  main.classList.add('affirmation-style')
+  main.classList.remove('mantra-style')
+}
+
+function mantraBackground() {
+  main.classList.remove('affirmation-style')
+  main.classList.add('mantra-style')
 }
 
 function generateMantra(e) {
@@ -65,6 +78,11 @@ function generateMantra(e) {
     enableRadio(affirmationRadio, mantraRadio)
     return
   }
+  breathingImg()
+  setTimeout(showMsg, 3000)
+}
+
+function showMsg() {
   showTextHideImg()
   showResetBtnHideSubmitOwn()
   displayMsg.classList.add('fade-in')
@@ -80,6 +98,13 @@ function generateMantra(e) {
 
 function submitCustom(e) {
   e.preventDefault()
+  formCustom.classList.add('hidden')
+  meditateImg.classList.remove('hidden')
+  breathingImg()
+  setTimeout(showCustomMsg, 3000)
+}
+
+function showCustomMsg() {
   hideFormShowText()
   showResetBtnHideSubmitOwn()
   displayMsg.classList.add('fade-in')
@@ -100,12 +125,19 @@ function reset(){
   enableRadio(affirmationRadio, mantraRadio)
   showSubmitOwnHideReset()
   displayMsg.classList.remove('fade-in')
+  main.classList.remove('affirmation-style')
+  main.classList.remove('mantra-style')
+  meditateImg.classList.remove('animate-img')
 }
 
 function showFormHideImgText() {
   disableRadio(affirmationRadio, mantraRadio)
   formCustom.classList.remove('hidden')
   hideTxtHideImg()
+}
+
+function breathingImg() {
+  meditateImg.classList.add('animate-img')
 }
 
 function enableRadio(radio1, radio2) {
@@ -116,6 +148,11 @@ function enableRadio(radio1, radio2) {
 function disableRadio(radio1, radio2) {
   radio1.disabled = true
   radio2.disabled = true
+}
+
+function hideTxtHideImg() {
+  meditateImg.classList.add('hidden')
+  displayMsg.classList.add('hidden')
 }
 
 function showTextHideImg() {

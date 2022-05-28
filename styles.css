@@ -6,13 +6,16 @@ dark-blue - #134d71;
 white - #ffffff;
 black - #000000;
 */
-* {
+body,
+html {
   margin: 0;
   padding: 0;
+  overflow: hidden;
 }
 
-body {
-  height: 100vh;
+main {
+  min-height: 100vh;
+  min-width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -20,13 +23,19 @@ body {
   color: #fff;
   background: linear-gradient(#134d71, #78a7c6, #f7e4bf)
 }
+.affirmation-style {
+  background: linear-gradient(#3b1371, #a876c4, #f4bfc6)
+}
+.mantra-style {
+  background: linear-gradient(#137121, #95c678, #bfdaf7)
+}
 .self-care-center-heading {
   margin: 8vh 0 8vh 0;
-  font-size: 3rem;
+  font-size: 1.5rem;
 }
 .form-heading {
   margin-bottom: 2vh;
-  font-size: 2rem;
+  font-size: 1.2rem;
 }
 .form-wrapper {
   margin-bottom: 8vh;
@@ -34,8 +43,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-radius: 1rem;
-  width: 45vw;
+  /* border-radius: 1rem; */
+  width: 100vw;
   max-height: 200px;
   color: #000;
   background: #fff;
@@ -51,15 +60,19 @@ body {
 .manta-lable,
 .custom-affirmation-lable,
 .custom-mantra-lable {
-  font-size: 1.3rem;
+  font-size: 1rem;
+}
+.affirmation-lable,
+.custom-affirmation-lable {
+  padding-right: 2rem;
 }
 .submit,
 .reset,
 .custom-form-button,
 .custom-submit {
   padding: .5vh 1.5vw .5vh 1.5vw;
-  border-radius: .3rem;
-  font-size: 1rem;
+  border-radius: .8rem;
+  font-size: .8rem;
   font-family: 'Quicksand', sans-serif;
   color: #fff;
   background: #134d71;
@@ -81,22 +94,20 @@ body {
 }
 .display-wrapper {
   display: flex;
-  padding: 10px;
+  padding: 5px;
   justify-content: center;
   align-items: center;
   text-align: center;
-  width: 55vw;
-  height: 12vh;
-  border-radius: 1rem;
+  width: 100vw;
+  height: 20vh;
   background: #fff;
   color: #000
 }
 .affirmation-mantra-msg {
-  padding: 3.1rem 1rem;
   font-size: 1.8rem;
 }
 .fade-in {
-  animation: fadein 2s ease-in forwards;
+  animation: fadein 1s ease-in forwards;
 }
 @keyframes fadein {
   0% {
@@ -106,22 +117,60 @@ body {
     opacity: 1;
   }
 }
+.custom-form {
+  padding: 0 0 12px 0;
+}
 .custom-form-lable {
-  margin-bottom: 2vh;
+  margin-bottom: 1vh;
   font-size: 1.2rem;
 }
 .custom-text {
-  width: 27vw;
-  font-size: 1rem;
+  font-size: .6rem;
 }
 .meditate-image {
-  width: auto;
-  height: auto;
-  max-height: 100%;
-  max-width: 100%;
+  height: 18vh;
+}
+.animate-img {
+  animation: breathing-img 3s ease-out;
+}
+@keyframes breathing-img {
+  25% {
+    width: auto;
+    height: auto;
+    max-height: 80%;
+    max-width: 80%;
+  }
+  50% {
+    width: auto;
+    height: auto;
+    max-height: 100%;
+    max-width: 100%;
+  }
+  75% {
+    width: auto;
+    height: auto;
+    max-height: 80%;
+    max-width: 80%;
+  }
+  100% {
+    width: auto;
+    height: auto;
+    max-height: 100%;
+    max-width: 100%;
+  }
 }
 .hidden {
   visibility: hidden;
   width: 0;
   height: 0;
+}
+@media (min-width: 600px) {
+  .form-wrapper {
+    border-radius: 1rem;
+    max-width: 600px;
+  }
+  .display-wrapper {
+    border-radius: 1rem;
+    max-width: 760px;
+  }
 }
